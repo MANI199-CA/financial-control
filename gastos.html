@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Gastos</title>
+    <link rel="stylesheet" href="styles/gastos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="top-bar-inner">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>GASTOS</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="form-group">
+                <input type="number" id="cantidad-ingreso" placeholder="Ingresa la cantidad" min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="motivo-ingreso" placeholder="Ingresa el motivo">
+            </div>
+
+            <button id="btn-guardar-ingreso" class="save-btn">Guardar Registro</button>
+
+            <div class="history-container">
+                <button id="btn-historial" class="circle-btn">Historial</button>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

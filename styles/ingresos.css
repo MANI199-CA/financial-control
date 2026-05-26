@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*pagina de ingresos*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor que simula el teléfono (mismo tamaño que el index) */
+.app-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  max-height: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado interno */
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.top-bar-inner .back-btn {
+  color: #333333;
+  font-size: 22px;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.2s ease;
+}
+.top-bar-inner .back-btn:hover {
+  color: #66D95D;
+}
+.top-bar-inner h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333333;
+  letter-spacing: 1px;
+}
+
+/* Área del formulario */
+.main-content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Espaciado uniforme entre los inputs */
+}
+
+/* Estilos de las cajas de texto (inputs) */
+.form-group {
+  width: 100%;
+}
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  /* Al hacer clic en la caja de texto, el borde se vuelve verde */
+}
+.form-group input:focus {
+  border-color: #66D95D;
+}
+
+/* Botón de guardar registro */
+.save-btn {
+  background-color: #66D95D;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.save-btn:hover {
+  background-color: rgb(62.985, 207.31, 51.69);
+}
+
+/* Contenedor e interfaz del botón circular de Historial */
+.history-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.circle-btn {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  background-color: transparent;
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.circle-btn:hover {
+  background-color: #333333;
+  color: #ffffff;
+  transform: scale(1.05);
+}/*# sourceMappingURL=ingresos.css.map */

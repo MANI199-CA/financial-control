@@ -1,0 +1,139 @@
+// Variables de color para mantener orden
+$color-ingresos: #66D95D; // El verde de tus botones
+$color-texto: #333333;
+$color-fondo: #f0f2f5;
+$color-blanco: #ffffff;
+$color-borde: #cccccc;
+$color-gastos: #F55656; // color rojo de los gastos
+$color-gastos-hover: #FF1A1A;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: $color-fondo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+/* Contenedor que simula el teléfono (mismo tamaño que el index) */
+.app-container {
+    background-color: $color-blanco;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    max-height: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    // border-radius: 10px solid;
+    // border-color: #66D95D;
+}
+
+/* Encabezado interno */
+.top-bar-inner {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+
+    .back-btn {
+        color: $color-texto;
+        font-size: 22px;
+        text-decoration: none;
+        margin-right: 20px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-ingresos;
+        }
+    }
+
+    h1 {
+        font-size: 22px;
+        font-weight: bold;
+        color: $color-texto;
+        letter-spacing: 1px;
+    }
+}
+
+/* Área del formulario */
+.main-content {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaciado uniforme entre los inputs */
+}
+
+/* Estilos de las cajas de texto (inputs) */
+.form-group {
+    width: 100%;
+
+    input {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border: 2px solid $color-borde;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        /* Al hacer clic en la caja de texto, el borde se vuelve verde */
+        &:focus {
+            border-color: $color-ingresos;
+        }
+    }
+}
+
+/* Botón de guardar registro */
+.save-btn {
+    background-color: $color-gastos;
+    color: $color-blanco;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($color-gastos-hover, 10%); // Oscurece el verde un poco
+    }
+}
+
+/* Contenedor e interfaz del botón circular de Historial */
+.history-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.circle-btn {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%; // Hace que el botón sea perfectamente redondo
+    border: 2px solid $color-texto;
+    background-color: transparent;
+    color: $color-texto;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $color-texto;
+        color: $color-blanco;
+        transform: scale(1.05); // Crece ligeramente
+    }
+}
