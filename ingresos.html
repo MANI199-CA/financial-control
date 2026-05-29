@@ -26,13 +26,22 @@
                 <input type="text" id="motivo-ingreso" placeholder="Ingresa el motivo">
             </div>
 
-            <button id="btn-guardar-ingreso" class="save-btn">Guardar Registro</button>
+            <button id="btn-guardar-ingreso" class="save-btn" onclick="agregarIngreso()">Guardar Registro</button>
 
-            <div class="history-container">
-                <button id="btn-historial" class="circle-btn">Historial</button>
+            <div class="btns-container">
+                <button id="btn-historial" class="circle-btn" onclick="mostarHistoIngresos()">Historial</button>
+                <button id="btn-clean" class="circle-btn" onclick="reiniciarHistorial()">Reiniciar Dia</button>
+            </div>
+
+
+            <div  id="historial-ingresos"  onclick="mostarHistoIngresos()"  >
+                <!-- <button onclick="togglehisto()">CERRAR</button> -->
+
+                <!-- <h1>este  es el historial</h1> -->
             </div>
         </main>
 
     </div>
+    <script src="javascript/ingresos.js"></script>
 </body>
 </html>

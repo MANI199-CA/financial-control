@@ -19,20 +19,24 @@
 
         <main class="main-content">
             <div class="form-group">
-                <input type="number" id="cantidad-ingreso" placeholder="Ingresa la cantidad" min="0" step="0.01">
+                <input type="number" id="cantidad-gastos" placeholder="Ingresa la cantidad" min="0" step="0.01">
             </div>
             
             <div class="form-group">
-                <input type="text" id="motivo-ingreso" placeholder="Ingresa el motivo">
+                <input type="text" id="motivo-gastos" placeholder="Ingresa el motivo">
             </div>
 
-            <button id="btn-guardar-ingreso" class="save-btn">Guardar Registro</button>
-
-            <div class="history-container">
-                <button id="btn-historial" class="circle-btn">Historial</button>
+            <button id="btn-guardar-gastos" class="save-btn" onclick="agregarGasto()">Guardar Registro</button>
+            
+            <div class="btns-container">
+                <button id="btn-historial" class="circle-btn" onclick="mostarHistoGasto()">Historial</button>
+                <button id="btn-clean" class="circle-btn" onclick="reiniciarHistorial()">Reiniciar Dia</button>
             </div>
+
+            <div  id="historial-gastos"  onclick="mostarHistoGasto()"  ></div>
         </main>
 
     </div>
+    <script src="javascript/gastos.js"></script>
 </body>
 </html>
