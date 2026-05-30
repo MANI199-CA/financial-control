@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Metas Financieras</title>
+    <link rel="stylesheet" href="styles/metas.css"> 
 </head>
 <body>
-    
-    <script src="main.js"></script>
+    <div class="app-container">
+        <header class="top-bar-inner">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>MIS METAS</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="form-group">
+                <input type="text" id="nombre-meta" placeholder="Ej. Moto Nueva, Viaje...">
+            </div>
+            <div class="form-group">
+                <input type="number" id="cantidad-meta" placeholder="Monto objetivo ($)" min="0">
+            </div>
+            <button id="btn-guardar-meta" class="save-btn" onclick="crearMeta()">Crear Meta</button>
+
+            <div class="history-container">
+                <h3>Metas Activas</h3>
+                <div id="lista-metas" class="metas-activas-container">
+                    <div class="meta-card">
+                        <div class="meta-header">
+                            <h4>Ejemplo: Llantas Moto</h4>
+                            <span>$500 / $2000</span>
+                        </div>
+                        <progress value="500" max="2000"></progress>
+                        <button class="abonar-btn">Abonar Dinero</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="javascript/metas.js"></script>
 </body>
 </html>
