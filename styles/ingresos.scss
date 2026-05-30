@@ -113,26 +113,29 @@ body {
 /* Contenedor e interfaz del botón circular de Historial */
 .btns-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Aquí está la magia: esto separa los botones sin "empujarlos" */
     margin-top: 20px;
     
 }
 
 .circle-btn {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%; // Hace que el botón sea perfectamente redondo
     border: 2px solid $color-texto;
     background-color: transparent;
     color: $color-texto;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     transition: all 0.3s ease;
-    margin: 20px;
+    // margin: 0;
     // padding: 10px;
 
     &:hover {

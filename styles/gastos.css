@@ -96,26 +96,26 @@ body {
 /* Contenedor e interfaz del botón circular de Historial */
 .btns-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
   margin-top: 20px;
 }
 
 .circle-btn {
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid #333333;
   background-color: transparent;
   color: #333333;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  margin: 20px;
-  padding: 10px;
 }
 .circle-btn:hover {
   background-color: #333333;
