@@ -114,7 +114,8 @@ body {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  margin: 10px;
+  margin: 20px;
+  padding: 10px;
 }
 .circle-btn:hover {
   background-color: #333333;

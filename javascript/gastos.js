@@ -71,6 +71,27 @@ function reiniciarHistorial() {
 
 }
 
+function generarReporteGastos(){
+    // 1. Empezamos con los títulos de las columnas
+    let contenidoCSV = "Fecha,Monto,Motivo\n";
+
+    // 2. Recorremos tu historial (la lista que ya tienes en localStorage)
+    historialGastos.forEach(item => {
+        // Armamos la línea con comas
+        contenidoCSV += `${item.fecha},${item.ingreso},${item.motivo}\n`;
+    });
+
+    // 3. Convertimos el texto en un "Blob" (un archivo descargable)
+    const archivo = new Blob([contenidoCSV], { type: 'text/csv' });
+    
+    // 4. Creamos un enlace temporal para que el navegador lo descargue
+    const url = URL.createObjectURL(archivo);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = "mi_reporte_gastos.csv"; // Nombre del archivo
+    link.click(); // "Simulamos" que el usuario picó el enlace
+}
+
 // gaurdar datos
 
 function guardarDatos() {
