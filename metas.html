@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metas Financieras</title>
     <link rel="stylesheet" href="styles/metas.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <header class="top-bar-inner">
             <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-left"> </i>
             </a>
             <h1>MIS METAS</h1>
         </header>
@@ -25,7 +26,7 @@
             <button id="btn-guardar-meta" class="save-btn" onclick="crearMeta()">Crear Meta</button>
 
             <div class="history-container">
-                <h3>Metas Activas</h3>
+                <h3 id="metas-activas-h3">Aún no tienes metas</h3>
                 <div id="lista-metas" class="metas-activas-container">
                     <div class="meta-card">
                         <div class="meta-header">

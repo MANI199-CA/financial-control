@@ -43,7 +43,7 @@ body {
   transition: color 0.2s ease;
 }
 .top-bar-inner .back-btn:hover {
-  color: #FF1A1A;
+  color: #60CCC8;
 }
 .top-bar-inner h1 {
   font-size: 22px;
@@ -75,12 +75,12 @@ body {
   /* Al hacer clic en la caja de texto, el borde se vuelve verde */
 }
 .form-group input:focus {
-  border-color: #FF1A1A;
+  border-color: #60CCC8;
 }
 
 /* Botón de guardar registro */
 .save-btn {
-  background-color: #F55656;
+  background-color: #60CCC8;
   color: #ffffff;
   border: none;
   padding: 15px;
@@ -91,7 +91,7 @@ body {
   transition: background-color 0.3s ease;
 }
 .save-btn:hover {
-  background-color: #e60000;
+  background-color: rgb(7.1348314607, 119.8651685393, 115.5842696629);
 }
 
 /* Contenedor e interfaz del botón circular de Historial */
@@ -105,7 +105,7 @@ body {
 
 .metas-activas-container {
   margin-top: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 15px;
 }
