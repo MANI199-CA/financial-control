@@ -1,6 +1,21 @@
 let metasHisto =  JSON.parse(localStorage.getItem('metasHisto')) || [];
 // const contenerdorMetas = document.querySelector(".metas-activas-container");
 
+
+// 1. Al cargar la página, intentamos recuperar lo guardado
+window.onload = function() {
+    // Intentamos obtener los datos
+    const datosGuardados = localStorage.getItem('metasHisto');
+    
+    // Si existen datos, los pasamos a nuestro arreglo y pintamos
+    if (datosGuardados) {
+        metasHisto = JSON.parse(datosGuardados);
+        actualizarPantalla(); // ¡Aquí está la clave!
+    }
+};
+
+
+
 //actualizar pantalla
 function actualizarPantalla() {
     const contenedorMetas = document.querySelector(".metas-activas-container");
