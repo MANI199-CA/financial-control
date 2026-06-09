@@ -6,7 +6,7 @@ function solicitarFecha() {
 }
 
 
-let historialIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];;
+let historialIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];
 
 
 

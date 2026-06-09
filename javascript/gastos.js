@@ -4,7 +4,7 @@ function solicitarFecha() {
 }
 
 
-let historialGastos = JSON.parse(localStorage.getItem('historialGastos')) || [];;
+let historialGastos = JSON.parse(localStorage.getItem('historialGastos')) || [];
 
 // agregar gastos
 
@@ -21,7 +21,7 @@ function agregarGasto() {
     // Creamos el objeto
     const nuevoMovimiento = {
         fecha: solicitarFecha(), // Llama a tu función
-        ingreso: cantidadGasto.value,
+        gasto: cantidadGasto.value,
         motivo: motivoGasto.value
     };
 
@@ -47,7 +47,7 @@ function mostarHistoGasto() {
 
     let html = '<h3>Ingresos Recientes:</h3> <br>'
     historialGastos.forEach(item => {
-        html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | INGRESO: $${item.ingreso} | MOTIVO: ${item.motivo} </li> </ul>`;
+        html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | GASTO: $${item.gasto} | MOTIVO: ${item.motivo} </li> </ul>`;
     })
 
     contenedor.innerHTML = html
@@ -78,7 +78,7 @@ function generarReporteGastos(){
     // 2. Recorremos tu historial (la lista que ya tienes en localStorage)
     historialGastos.forEach(item => {
         // Armamos la línea con comas
-        contenidoCSV += `${item.fecha},${item.ingreso},${item.motivo}\n`;
+        contenidoCSV += `${item.fecha},${item.gasto},${item.motivo}\n`;
     });
 
     // 3. Convertimos el texto en un "Blob" (un archivo descargable)

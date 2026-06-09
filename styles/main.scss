@@ -73,10 +73,10 @@ body {
     border: 2px solid #0056b3;
 }
 
-&:focus, &:active {
-        outline: none;
-        box-shadow: none; // A veces el recuadro es una sombra
-    }
+// &:focus, &:active {
+//         outline: none;
+//         box-shadow: none; // A veces el recuadro es una sombra
+//     }
 
 /* Efecto al pasar el mouse (hover) o presionar */
 // .action-btn:hover, .action-btn:active {
@@ -115,4 +115,39 @@ body {
         font-weight: bold; /* Negritas */
         font-size: 20px;   /* Tamaño mayor */
     }
+}
+
+#capital{
+    background-color: #ffffff;
+    border: 2px solid #4AED86;
+    // color: #47D10D;
+    padding: 15px 20px;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 8px;   
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    outline: none;
+}
+
+#titulo_capital{
+    color: #47D10D;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.negativo {
+    color: red !important; // !important le da la máxima prioridad
+}
+
+.positivo {
+    color: #47D10D !important;
+}
+
+.neutro {
+    color: gray !important;
 }
