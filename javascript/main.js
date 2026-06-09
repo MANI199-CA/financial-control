@@ -4,7 +4,9 @@ window.onload = function () {
     actualizarCapital();
 }
 
-
+window.addEventListener('focus', function() {
+    actualizarCapital();
+});
 
 // actualizar capital
 
