@@ -68,6 +68,6 @@ function mostrarMovis(){
     
     contenedor.innerHTML = html;
     
-    contenedor.classList.toggle('lista-historial-active')
+    contenedor.classList.toggle('lista-movis-active')
 }
 //esto es una prueba
