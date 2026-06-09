@@ -40,4 +40,34 @@ function actualizarCapital() {
     }
 }
 
+// mostrar historial movimientos
+
+let movimientos = [];
+
+function mostrarMovis(){
+  const datosIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];
+    const datosGastos = JSON.parse(localStorage.getItem('historialGastos')) || [];
+    
+    
+    datosIngresos.forEach(item=> {
+        movimientos.push(item)
+    });
+    
+    datosGastos.forEach(item => {
+        movimientos.push(item)
+    });
+    
+    const contenedor = document.getElementById("movimientos");
+    
+    contenedor.innerHTML = ""
+    let html = '<h3>Movimientos Recientes:</h3> <br>'
+    
+    movimientos.forEach(item =>{
+      html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | INGRESO: $${item.ingreso || item.gasto} | MOTIVO: ${item.motivo} </li> </ul>`
+    });
+    
+    contenedor.innerHTML = html;
+    
+    contenedor.classList.toggle('lista-historial-active')
+}
 //esto es una prueba
