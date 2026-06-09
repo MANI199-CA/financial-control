@@ -39,3 +39,5 @@ function actualizarCapital() {
          pantallaCapital.classList.add('positivo'); // ¡Vas bien, tienes saldo a favor!
     }
 }
+
+//esto es una prueba
