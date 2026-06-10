@@ -151,7 +151,7 @@ body {
 .neutro {
     color: gray !important;
 }
-
+/***
 #movimientos {
     display: none; /* Oculto por defecto */
     position: absolute;
@@ -164,7 +164,7 @@ body {
     z-index: 1000; /* Para que quede por encima de todo */
     overflow-y: auto; /* Si la lista es larga, que tenga scroll */
 }
-
+/*
 #movimientos.lista-movis-active{
     display:block; /* Oculto por defecto */
     position: absolute;
@@ -176,5 +176,4 @@ body {
     padding: 20px;
     z-index: 1000; /* Para que quede por encima de todo */
     overflow-y: auto; /* Si la lista es larga, que tenga scroll */
-}
-
+} **/
