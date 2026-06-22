@@ -2,9 +2,10 @@
 
 window.onload = function () {
     actualizarCapital();
+    
 }
 
-window.addEventListener('focus', function() {
+window.addEventListener('focus', function () {
     actualizarCapital();
 });
 
@@ -27,7 +28,7 @@ function actualizarCapital() {
 
     let totalCapital = totalIngresos - totalGastos;
 
-    pantallaCapital.innerHTML = `$${totalCapital.toLocaleString('en-US',{ minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    pantallaCapital.innerHTML = `$${totalCapital.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
     pantallaCapital.classList.remove('positivo', 'negativo', 'neutro')
 
@@ -36,38 +37,56 @@ function actualizarCapital() {
     } else if (totalCapital === 0) {
         pantallaCapital.classList.add('neutro'); // Neutro
     } else {
-         pantallaCapital.classList.add('positivo'); // ¡Vas bien, tienes saldo a favor!
+        pantallaCapital.classList.add('positivo'); // ¡Vas bien, tienes saldo a favor!
     }
 }
 
 // mostrar historial movimientos
 
-let movimientos = [];
 
-function mostrarMovis(){
-  const datosIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];
+
+function mostrarMovis() {
+    const datosIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];
     const datosGastos = JSON.parse(localStorage.getItem('historialGastos')) || [];
-    
-    
-    datosIngresos.forEach(item=> {
-        movimientos.push(item)
-    });
-    
-    datosGastos.forEach(item => {
-        movimientos.push(item)
-    });
-    
     const contenedor = document.getElementById("movimientos");
-    
-    contenedor.innerHTML = ""
+    let movimientos = [];
+
     let html = '<h3>Movimientos Recientes:</h3> <br>'
-    
-    movimientos.forEach(item =>{
-      html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | INGRESO: $${item.ingreso || item.gasto} | MOTIVO: ${item.motivo} </li> </ul>`
-    });
-    
-    contenedor.innerHTML = html;
-    
-    contenedor.classList.toggle('lista-movis-active')
+    if (movimientos >= 1) {
+        movimientos.forEach(item => {
+            html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | MOVIMIENTO: $${item.ingreso || item.gasto} 
+        | MOTIVO: ${item.motivo} </li> </ul>`
+        });
+
+        contenedor.innerHTML = html;
+        contenedor.classList.toggle('lista-movis-active')
+
+    } else {
+        datosIngresos.forEach(item => {
+            movimientos.push(item)
+        });
+
+        datosGastos.forEach(item => {
+            movimientos.push(item)
+        });
+
+        movimientos.forEach(item => {
+            html += `<ul> <li style="padding: 10px;"> FECHA: ${item.fecha} | MOVIMIENTO: $${item.ingreso || item.gasto} 
+        | MOTIVO: ${item.motivo} </li> </ul>`
+        });
+
+        contenedor.innerHTML = html;
+        contenedor.classList.toggle('lista-movis-active')
+
+
+    }
+
+
 }
 //esto es una prueba
+
+
+
+
+
+

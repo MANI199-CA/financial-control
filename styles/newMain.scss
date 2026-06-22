@@ -1,37 +1,63 @@
-/* Reseteo básico para asegurar consistencia en navegadores */
-* {
+/* reseteo basico para asegurar consistencia en navegadores */
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo general de la página */
-body {
+/* fonde general de la pagina*/
+
+body{
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    // margin: 0;
+    // background-color: red !important;
 }
+/*contenerodr que simula la pantalla del movil*/
 
-/* Contenedor que simula la pantalla del móvil */
-.app-container {
+.app-container{
+    // background-color: #ffffff;
+    // width: 350px;
+    // min-width: 350px;
+    // max-width: 400px;
+    // // height: 100vh;
+    // // max-height: 800px;
+    // box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    // flex-shrink: 0;
+    // display: flex;
+    // flex-direction: column;
+    // position: relative;
+    // // margin: 0 auto;
+    // // min-height: 800px;
+
+
     background-color: #ffffff;
-    width: 100%;
-    max-width: 400px;
-    height: 100vh;
-    max-height: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;       // Ancho fijo exacto
+    min-width: 400px;   // Obliga a no encogerse
+    max-width: 400px;   // Obliga a no estirarse
+    height: 800px;      // Altura fija para uniformidad
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    // Esto es lo que faltaba para que lo interno no rompa el ancho
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow-x: hidden; // Corta cualquier cosa que intente ser más ancha que 350px
+    box-sizing: border-box; // Vital para que el padding no afecte el ancho
+    padding: 0; 
     margin: 0 auto;
-    min-height: 800px;
+
+    // border: 5px solid blue !important;
 }
 
-/* Barra superior */
-.top-bar {
+/* barra superior*/
+
+.top-bar{
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -39,7 +65,7 @@ body {
     background-color: #4AED86;
 }
 
-.icon-btn {
+.icon-btn{
     background: none;
     border: none;
     font-size: 24px;
@@ -47,20 +73,22 @@ body {
     cursor: pointer;
 }
 
-/* Contenedor de los botones */
-.main-content {
+/*contenedor de los botones*/
+
+.main-content{
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    /* Espacio entre los botones */
+    /*Espacio entre los botones*/
 }
 
-/* Diseño de los botones principales */
-.action-btn {
+/**diseño de los botones principales*/
+
+.action-btn{
     background-color: #ffffff;
     border: 2px solid #0056b3;
-    /* Color azul para el borde */
+    /*color azul para el borde*/
     color: #0056b3;
     padding: 15px 20px;
     font-size: 18px;
@@ -76,58 +104,43 @@ body {
     border: 2px solid #0056b3;
 }
 
-// &:focus, &:active {
-//         outline: none;
-//         box-shadow: none; // A veces el recuadro es una sombra
-//     }
-
-/* Efecto al pasar el mouse (hover) o presionar */
-// .action-btn:hover, .action-btn:active {
-//     background-color: #0056b3;
-//     color: #ffffff;
-// }
-
-#btn-ingresos:hover,
-#btn-ingresos:active {
+#btn-ingresos:hover,#btn-ingresos:active{
     background-color: #66D95D;
     color: #ffffff;
     text-decoration: none;
-
 }
 
-#btn-gastos:hover,
-#btn-gastos:active {
+#btn-gastos:hover,#btn-gastos:active{
     background-color: #F55656;
     color: #ffffff;
     text-decoration: none;
 }
 
-#btn-metas:hover, #btn-metas:active{
+
+#btn-metas:hover,#btn-metas:active{
     background-color: #60CCC8;
     color: #ffffff;
     text-decoration: none;
 }
 
-/* Ajustes para el texto dentro de cualquier botón al hacer hover */
-.action-btn:hover, .action-btn:active {
-    /* Centramos el contenido del botón */
+/*ajustes para el texto dentro de cualquier boton al hacer hover*/
+
+.action-btn:hover, .action-btn:active{
     justify-content: center;
 
-
-    span {
-        font-weight: bold; /* Negritas */
-        font-size: 20px;   /* Tamaño mayor */
+    span{
+        font-weight: bold;
+        font-size: 20px;
     }
 }
 
 #capital{
     background-color: #ffffff;
     border: 2px solid #4AED86;
-    // color: #47D10D;
     padding: 15px 20px;
     font-size: 50px;
     font-weight: bold;
-    border-radius: 8px;   
+    border-radius: 8px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -143,20 +156,20 @@ body {
     margin-top: 10px;
 }
 
-.negativo {
-    color: red !important; // !important le da la máxima prioridad
+.negativo{
+    color: red !important;
 }
 
-.positivo {
+.positivo{
     color: #47D10D !important;
 }
 
-.neutro {
+.neutro{ 
     color: gray !important;
 }
 
-#movimientos {
-    display: none; /* Oculto por defecto */
+#movimientos{
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -164,19 +177,19 @@ body {
     height: 100%;
     background-color: white;
     padding: 20px;
-    z-index: 1000; /* Para que quede por encima de todo */
-    overflow-y: auto; /* Si la lista es larga, que tenga scroll */
+    z-index: 1000;
+    overflow-y: auto;
 }
 
 #movimientos.lista-movis-active{
-    display:block; /* Oculto por defecto */
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+     width: 100%;
     height: 100%;
     background-color: white;
     padding: 20px;
-    z-index: 1000; /* Para que quede por encima de todo */
-    overflow-y: auto; /* Si la lista es larga, que tenga scroll */
-} 
+    z-index: 1000;
+    overflow-y: auto;
+}
