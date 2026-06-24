@@ -168,4 +168,19 @@ body {
 .meta-card .abonar-btn:active {
   background-color: #4CAF50;
   color: white;
+}
+
+.borrar-abonar {
+  background-color: transparent;
+  border: 2px solid #F55656;
+  color: #F55656;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.borrar-abonar:active {
+  background-color: #F55656;
+  color: white;
 }/*# sourceMappingURL=metas.css.map */

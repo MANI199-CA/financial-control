@@ -195,3 +195,19 @@ body {
         }
     }
 }
+
+.borrar-abonar{
+    background-color: transparent;
+        border: 2px solid $color-gastos;
+        color: $color-gastos;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s;
+
+        &:active {
+            background-color: $color-gastos;
+            color: white;
+        }
+    }

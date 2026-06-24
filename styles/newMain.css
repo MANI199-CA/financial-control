@@ -112,7 +112,7 @@ body {
 
 #capital {
   background-color: #ffffff;
-  border: 2px solid #4AED86;
+  border: 2px solid;
   padding: 15px 20px;
   font-size: 50px;
   font-weight: bold;

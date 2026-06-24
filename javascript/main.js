@@ -13,8 +13,14 @@ window.addEventListener('focus', function () {
 
 function actualizarCapital() {
     const pantallaCapital = document.getElementById("cantidad_capital");
+    const coloresTitulo = document.querySelector('.colores');
+    const borderColor = document.querySelector(".colores-border");
+
     const datosIngresos = JSON.parse(localStorage.getItem('historialIngresos')) || [];
     const datosGastos = JSON.parse(localStorage.getItem('historialGastos')) || [];
+    let sumaMetasGuardada = localStorage.getItem('sumatoriaMetas');
+let sumaMetas = (sumaMetasGuardada === null || sumaMetasGuardada === "undefined") ? 
+                         0 : parseFloat(sumaMetasGuardada);
 
     let totalIngresos = 0
     datosIngresos.forEach(item => {
@@ -26,7 +32,7 @@ function actualizarCapital() {
         totalGastos += parseFloat(item.gasto);
     })
 
-    let totalCapital = totalIngresos - totalGastos;
+    let totalCapital = totalIngresos - totalGastos - sumaMetas;
 
     pantallaCapital.innerHTML = `$${totalCapital.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
@@ -34,10 +40,16 @@ function actualizarCapital() {
 
     if (totalCapital < 0) {
         pantallaCapital.classList.add('negativo'); // ¡Alerta: estás en números rojos!
+        coloresTitulo.classList.add('negativo');
+        borderColor.classList.add('negativo');
     } else if (totalCapital === 0) {
         pantallaCapital.classList.add('neutro'); // Neutro
+        coloresTitulo.classList.add('neutro');
+        borderColor.classList.add('neutro');
     } else {
         pantallaCapital.classList.add('positivo'); // ¡Vas bien, tienes saldo a favor!
+        coloresTitulo.classList.add('positivo');
+        borderColor.classList.add('positivo');
     }
 }
 
